@@ -1,44 +1,306 @@
 /* Default theme below */
+/* color theme https://coolors.co/ffffff-6c809a-f2f5ea-d6dbd2-bbc7a4 */
 
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 * {
     font-family: Libre Baskerville, 'Times New Roman', Times, serif;
-    box-sizing: border-box
-}
-
-html {
-  height: 100%;
+  
 }
 
 body {
+  margin:6em 0;
+  background-color: #D6DBD2;
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
+
 }
 
-body {
-    margin:6em 0;
-  }
-  
-  nav {
-    background-color:#eee;
-    overflow:hidden;
-    scroll-behavior:smooth;
-    .container {
-      height:calc(3em + 4px);
-      section {
-        padding:calc(1em + 2px);
-        width:100vw;
-        a {
-          border:solid 1px transparent;
-          padding:1em;
-        }
+header {
+  background-color: #F2F5EA;
+  display: flex;
+  align-self: flex-start;
+  align-items: baseline;
+  flex-direction: column;
+  gap: 100px;
+  border: 100px;
+  border-radius: 16px;
+
+}
+
+#main-holder {
+  width: 50%;
+  height: 70%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px 2px #BBC7A4;
+}
+
+nav {
+  background-color: #F2F5EA;
+  overflow:hidden;
+  scroll-behavior:smooth;
+  .container {
+    height:calc(50px + 4px);
+    section {
+      padding:calc(1em + 2px);
+      width:100vw;
+      a {
+        border:solid 1px transparent;
+        padding:1em;
       }
     }
   }
+}
+
+#login-page-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+#login-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
+//Sass color variables
+$link-color: #BBC7A4;
+$hover-color: #6C809A;
+$visited-color: darken($link-color, 20%);
+
+
+a{
+    color: $link-color; 
+    text-decoration: none;
+    position: relative;
+
+    &:before{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      border-bottom: 1px solid $hover-color;
+      transform:  scaleX(0); //hides link initially
+      transition: transform .5s ease;
+    }
+
+    &:hover:before {
+      transform:  scaleX(1);
+    }
+
+    &:hover{
+      color: $hover-color;
+    }
+
+    &:visited{
+      color: $visited-color;
+    }
   
-  p {
-    margin:1em;
-    color: red;
+
+}
+  
+$easing: cubic-bezier(0.5, 0, 0.5, 1);
+
+#container {
+
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #D6DBD2;
+}
+
+.effect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1em;
+  cursor: pointer;
+
+  &__heading {
+    font-size: 1.5em;
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
+
+    &:after {
+      content: '';
+      position: absolute;
+    }
   }
+
+  &__subheading {
+    font-size: 1.2em;
+    line-height: 2;
+    letter-spacing: 0.04em;
+  }
+}
+
+.effect-a {
+  opacity: 0.5;
+  transition: opacity 0.3s $easing;
+
+  .effect__heading:after {
+    opacity: 0;
+    bottom: 2px;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    background: #6C809A;
+    z-index: -1;
+    transform-origin: 0% 50%;
+    transform: scaleX(0);
+    transition: transform 0.5s $easing;
+  }
+
+  .effect__subheading {
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.5s $easing, transform 0.5s $easing;
+  }
+
+  &:hover {
+    opacity: 1;
+
+    .effect__heading:after {
+      opacity: 0.1;
+      transform: scaleX(1);
+    }
+    .effect__subheading {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+}
+
+.effect-b {
+  opacity: 0.5;
+  transition: opacity 0.3s $easing;
+
+  .effect__heading:after {
+    opacity: 0;
+    content: '⎕';
+    font-size: 15em;
+    line-height: 1;
+    top: 100%;
+    left: 50%;
+    transform-origin: 50% 50%;
+    transform: translate(-50%, -50%) scale(0.8) rotate(45deg);
+    transition: opacity 0.5s $easing, transform 0.5s $easing;
+  }
+
+  .effect__subheading {
+    opacity: 0;
+    transform: scale(0.8) rotate(25deg);
+    transition: opacity 0.5s $easing, transform 0.5s $easing;
+  }
+
+  &:hover {
+    opacity: 1;
+    .effect__subheading {
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+    }
+    .effect__heading:after {
+      opacity: 0.1;
+      transform: translate(-50%, -50%) scaleX(1) rotate(0deg);
+    }
+  }
+}
+
+.effect-c {
+  opacity: 0.5;
+  transition: opacity 0.3s $easing;
+
+  .effect__heading:after {
+    opacity: 0;
+    content: '⎦';
+    font-size: 4em;
+    line-height: 1;
+    top: calc(100% + 20px);
+    left: calc(100% + 20px);
+    transform: translate(-50%, 50%) scale(0.8);
+    transition: opacity 0.5s $easing, transform 0.5s $easing;
+  }
+
+  .effect__heading:before {
+    position: absolute;
+    opacity: 0;
+    content: '⎡';
+    font-size: 4em;
+    line-height: 1;
+    top: 20px;
+    left: -20px;
+    transform: translate(-50%, -150%) scale(0.8);
+    transition: opacity 0.5s $easing, transform 0.5s $easing;
+  }
+
+  .effect__subheading {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s $easing, transform 0.5s $easing;
+  }
+
+  &:hover {
+    opacity: 1;
+    .effect__subheading {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .effect__heading:after, .effect__heading:before {
+      opacity: 0.1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}
+
+.effect-d {
+  opacity: 0.5;
+  transition: opacity 0.3s $easing;
+
+  .effect__heading:after {
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    height: 40px;
+    width: 50%;
+    background: #000;
+    z-index: -1;
+    transform-origin: 50% 50%;
+    transform: translate(-50%, -50%) rotate(45deg) scaleX(0);
+    transition: transform 0.5s $easing;
+  }
+
+  .effect__subheading {
+    opacity: 0;
+    transform: translate(-10px, -10px);
+    transition: opacity 0.5s $easing, transform 0.5s $easing;
+  }
+
+  &:hover {
+    opacity: 1;
+
+    .effect__heading:after {
+      opacity: 0.1;
+      transform: translate(-50%, -50%) rotate(45deg) scaleX(1);
+    }
+    .effect__subheading {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+}
