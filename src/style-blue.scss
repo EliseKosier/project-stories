@@ -1,0 +1,83 @@
+/* Default theme below */
+/* color theme https://coolors.co/palette/e7ebef-bcd4e6-44779c-003153 */
+
+/* SASS color variations */
+
+$color-snow: #E7EBEF;
+$color-ice: #BCD4E6;
+$color-jeans: #44779C;
+$color-celeste: #4B9CD3;
+$color-teal: #003153;
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+* {
+    font-family: Libre Baskerville, 'Times New Roman', Times, serif;
+  
+}
+
+header {
+    background-color: $color-jeans;
+    padding: 30px;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+  }
+  
+  section {
+    display: -webkit-flex;
+    display: flex;
+  }
+  
+  nav {
+  
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  
+    li { display: inline-block; }
+  
+    a {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+    }
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: $color-ice;
+    padding: 20px;
+    
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  article {
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
+    background-color: $color-teal;
+    padding: 10px;
+  }
+  
+  
+  footer {
+    background-color: $color-ice;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+  
+  
+  @media (max-width: 600px) {
+    section {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+  }
