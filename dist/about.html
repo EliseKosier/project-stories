@@ -8,21 +8,24 @@
 </head>
 <body>
 
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="../dist/index.html">Home</a>
+    <a href="../dist/read.html">Read</a>
+    <a href="../dist/login.html">Login</a>
+    <a href="../dist/about.html">About</a>
+  </div>
+  
+  <div id="main">
+    <span class="openbtn" onclick="openNav()">&#9776;</span>
+  </div>
+
   <header>
     <h2>Take your fear and meekness;</h2>
-    <p>and replace it with the corrage to do what must be done!</p>
+    <p>and replace it with the courage to do what must be done!</p>
   </header>
-  
-  <section>
-    <nav>
-      <ul>
-        <li><a href="../dist/index.html">Home</a></li>
-        <li><a href="../dist/read.html">Read</a></li>
-        <li><a href="../dist/about.html">About</a></li>
-        <li><a href="../dist/login.html">Login</a></li>
-      </ul>
-    </nav>
     
+    <section>
     <article>
       <h1>Who am I?</h1>
       <p>Hello, thank you for stopping by to see my little project. My name is Elise and I am very passionate about coding and the art of story telling.</p>
@@ -40,5 +43,14 @@
 
 
   <script src="main.js"></script>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
 </body>
 </html>

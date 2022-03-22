@@ -8,32 +8,44 @@
 </head>
 <body>
 
-  <header>
-    <h2>There are few things in this world I understand;</h2>
-    <p>at least while I am reading, everything is crystle clear.</p>
-  </header>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="../dist/index.html">Home</a>
+    <a href="../dist/read.html">Read</a>
+    <a href="../dist/login.html">Login</a>
+    <a href="../dist/about.html">About</a>
+  </div>
   
-  <section>
-    <nav>
-      <ul>
-        <li><a href="../dist/index.html">Home</a></li>
-        <li><a href="../dist/read.html">Read</a></li>
-        <li><a href="../dist/about.html">About</a></li>
-        <li><a href="../dist/login.html">Login</a></li>
-      </ul>
-    </nav>
+  <div id="main">
+    <span class="openbtn" onclick="openNav()">&#9776;</span>
+  </div>
+
+<body>
+
+  <header>
+    <h2>'There are few things in this world I understand;</h2>
+    <p>at least while I am reading, everything is crystal clear.'</p>
+  </header>
     
     <section>
     <article>
       <h1>Blue as the Deep Dark Ocean</h1>
       <ul>
           <li><a href="../dist/batddo-1.html">Chapter 1</a></li>
-          <li>Chapter 2</li>
+          <li><a href="../dist/batddo-2.html">Chapter 2</a></li>
           <li>Chapter 3</li>
           <li>Stay tuned for more!</li>
       </ul>
     </article>
-  </section>
+
+    <article>
+      <h1>Tales from Aeon; The Black Knight Saga</h1>
+      <ul>
+          <li><a href="../dist/Aeon-c1.html">Chapter 1</a></li>
+          <li>Stay tuned for more!</li>
+      </ul>
+    </article>
+
 
   <article>
       <h1>Poems of Death</h1>
@@ -43,12 +55,22 @@
       </ul>
   </article>
 </section>
+
+
   
   <footer>
     © 2022-2023 Elise Kosier. All rights reserved.
   </footer>
-
-
+  
   <script src="main.js"></script>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
 </body>
 </html>

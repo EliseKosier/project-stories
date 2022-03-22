@@ -8,24 +8,26 @@
 </head>
 <body>
 
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="../dist/index.html">Home</a>
+    <a href="../dist/read.html">Read</a>
+    <a href="../dist/login.html">Login</a>
+    <a href="../dist/about.html">About</a>
+  </div>
+  
+  <div id="main">
+    <span class="openbtn" onclick="openNav()">&#9776;</span>
+  </div>
+
   <header>
     <h2>Take your fear and meekness;</h2>
     <p>and replace it with the corrage to do what must be done!</p>
   </header>
   
-  <section>
-    <nav>
-      <ul>
-        <li><a href="../dist/index.html">Home</a></li>
-        <li><a href="../dist/read.html">Read</a></li>
-        <li><a href="../dist/about.html">About</a></li>
-        <li><a href="../dist/login.html">Login</a></li>
-      </ul>
-    </nav>
     
     <article>
       <h1>Login function is coming soon!</h1>
-      <p>With login there will be chapter memory, email updates, comments, and forms.</p>
       <p>I just need to finish greasing the servers and brewing tea. Until than, why not read a good book?</p>
       <p>With pleasure, Elise.</p>
 
@@ -38,5 +40,14 @@
 
 
   <script src="main.js"></script>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
 </body>
 </html>

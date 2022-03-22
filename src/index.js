@@ -21,7 +21,7 @@ post.addEventListener("click", function(){
     var li = document.createElement("li");
     var text = document.createTextNode(commentBoxValue);
     li.appendChild(text);
-    window.alert("Sorry... Comments are not enabled at this time.");
+    window.alert("Sorry... Comments are not enabled at this time");
  
 });
   
